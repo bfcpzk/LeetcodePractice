@@ -1,9 +1,6 @@
 package tree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * 1245. Tree Diameter
@@ -27,7 +24,7 @@ public class Solution1245 {
      * 任意一个点开始的 bfs 搜索最后一个点一定是整个树中最长路径的某一个端点，
      * 然后第二次 bfs 从这个端点出发进一步找出最长路径的另一个端点
      */
-    static class BFSSolution {
+    static class BFSFarthestNode {
         public int treeDiameter(int[][] edges) {
             if (edges.length == 0) return 0;
             List<Integer>[] g = new List[edges.length + 1];
@@ -69,6 +66,49 @@ public class Solution1245 {
             }
 
             return new int[]{lastNode, dist};
+        }
+    }
+
+    /**
+     * 找到所有叶子节点，然后 bfs, 一层一层往上 像剥洋葱一样，直到最后剩下一个或两个节点的时候停止，
+     * 这一个或两个点就是图的 centroid，而此时已经走过的路径长度 * 2 (+1 or not) 就是最终结果。
+     * 这个计算图的 centroid 的方法，对于一棵树来说，可以用于计算最小高度树的根节点。310. Minimum Height Trees
+     */
+    class BFSCentroidOfGraph {
+        public int treeDiameter(int[][] edges) {
+            int n = edges.length + 1;
+            Set<Integer>[] g = new Set[n];
+            for (int i = 0 ; i < n ; i++) g[i] = new HashSet<>();
+            for (int[] e : edges) {
+                g[e[0]].add(e[1]);
+                g[e[1]].add(e[0]);
+            }
+
+            Queue<Integer> leaves = new LinkedList<>();
+            for (int i = 0 ; i < n ; i++) {
+                if (g[i].size() == 1) leaves.offer(i);
+            }
+            int vLeft = n;
+            int layers = 0;
+            while (vLeft > 2) {
+                vLeft -= leaves.size();
+
+                Queue<Integer> nextLeaves = new LinkedList<>();
+
+                while (!leaves.isEmpty()) {
+                    int leaf = leaves.poll();
+                    int neighbor = g[leaf].iterator().next();
+                    g[neighbor].remove(leaf);
+                    if (g[neighbor].size() == 1) nextLeaves.offer(neighbor);
+                }
+
+                layers += 1;
+                leaves = nextLeaves;
+            }
+
+            if (vLeft == 2) return 2 * layers + 1;
+            else return 2 * layers;
+
         }
     }
 }
