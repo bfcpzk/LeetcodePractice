@@ -111,4 +111,46 @@ public class Solution1245 {
 
         }
     }
+
+    /**
+     * 从树的任意一个节点出发，后续遍历，对于每一个中间节点，记录它所有子路径的最大的两个距离，将两个距离加起来
+     * 不断更新 diameter 全局变量，向上返回的是所有子路径的最大距离，直到回溯到原点。此时diameter就是答案。
+     * 1522. Diameter of N-Ary Tree 方法完全一样 (https://leetcode.com/problems/diameter-of-n-ary-tree/)
+     */
+    class DFSParentLeaf {
+        Integer diameter = 0;
+
+        public int treeDiameter(int[][] edges) {
+            int n = edges.length + 1;
+            List<Integer>[] g = new List[n];
+            for (int i = 0 ; i < n ; i++) g[i] = new ArrayList<>();
+            for (int[] e : edges) {
+                g[e[0]].add(e[1]);
+                g[e[1]].add(e[0]);
+            }
+            boolean[] visited = new boolean[n];
+            dfs(0, visited, g);
+            return diameter;
+        }
+
+        int dfs(int v, boolean[] visited, List<Integer>[] g) {
+            int topDist1 = 0, topDist2 = 0;
+
+            visited[v] = true;
+            for (Integer neighbor : g[v]) {
+                int dist = 0;
+                if (!visited[neighbor])
+                    dist = 1 + dfs(neighbor, visited, g);
+                if (dist > topDist1) {
+                    topDist2 = topDist1;
+                    topDist1 = dist;
+                } else if (dist > topDist2) {
+                    topDist2 = dist;
+                }
+            }
+
+            diameter = Math.max(diameter, topDist1 + topDist2);
+            return topDist1;
+        }
+    }
 }
