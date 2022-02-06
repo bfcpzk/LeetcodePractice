@@ -3,7 +3,7 @@ package tree;
 import java.util.*;
 
 /**
- * 1245. Tree Diameter
+ * 1245. Tree Diameter (https://leetcode.com/problems/tree-diameter/solution/)
  * The diameter of a tree is the number of edges in the longest path in that tree.
  *
  * There is an undirected tree of n nodes labeled from 0 to n - 1. You are given a 2D array edges where

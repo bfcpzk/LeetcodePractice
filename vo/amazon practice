@@ -1,0 +1,28 @@
+2.5
+Easy
+1920 Build Array from Permutation
+1470 Shuffle the Array
+771 Jewels and Stones
+1603 Design Parking System
+938 Range Sum of BST
+1290 Convert Binary Number in a Linked List to Integer
+346 Moving Average from Data Stream
+617 Merge Two Binary Trees
+
+
+Medium
+1570 Dot Product of Two Sparse Vectors
+807 Max Increase to Keep City Skyline
+2125 Number of Laser Beams in a Bank
+1329 Sort the Matrix Diagonally (matric index processing, tricky)
+1628 Design an Expression Tree With Evaluate Function (good)
+1762 Buildings With an Ocean View
+339	Nested List Weight Sum
+1008 Construct Binary Search Tree from Preorder Traversal
+1382 Balance a Binary Search Tree
+894 All Possible Full Binary Trees
+1650 Lowest Common Ancestor of a Binary Tree III
+701 Insert into a Binary Search Tree
+1472 Design Browser History
+763 Partition Labels (preSum, right to left)
+1277 Count Square Submatrices with All Ones (dp) https://leetcode.com/problems/count-square-submatrices-with-all-ones/discuss/643429/Python-DP-Solution-%2B-Thinking-Process-Diagrams-(O(mn)-runtime-O(1)-space)
