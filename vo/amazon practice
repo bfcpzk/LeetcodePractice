@@ -26,3 +26,33 @@ Medium
 1472 Design Browser History
 763 Partition Labels (preSum, right to left)
 1277 Count Square Submatrices with All Ones (dp) https://leetcode.com/problems/count-square-submatrices-with-all-ones/discuss/643429/Python-DP-Solution-%2B-Thinking-Process-Diagrams-(O(mn)-runtime-O(1)-space)
+
+2.6
+Easy
+905 Sort Array By Parity
+344 Reverse String
+1207 Unique Number of Occurrences
+876 Middle of the Linked List
+977 Squares of a Sorted Array (two pointer with extra array)
+1710 Maximum Units on a Truck
+852 Peak Index in a Mountain Array
+237 Delete Node in a Linked List
+104 Maximum Depth of Binary Tree
+226 Invert Binary Tree
+94 Binary Tree Inorder Traversal
+
+Medium
+1026 Maximum Difference Between Node and Ancestor(top-down, bottom-up)
+419 Battleships in a Board
+    Going over all cells, we can count only those that are the "first" cell of the battleship.
+    First cell will be defined as the most top-left cell. We can check for first cells by only
+    counting cells that do not have an 'X' to the left and do not have an 'X' above them.
+442 Find All Duplicates in an Array
+    值索引化，然后取相反数，出现一次的对应位置的数变负值，出现两次的变正。
+46 Permutations
+78 Subsets
+22 Generate Parentheses
+1910 Remove All Occurrences of a Substring (kmp / stack / inner function)
+1110 Delete Nodes And Return Forest (good)
+695 Max Area of Island
+
