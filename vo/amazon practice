@@ -56,3 +56,32 @@ Medium
 1110 Delete Nodes And Return Forest (good)
 695 Max Area of Island
 
+2.8
+Easy
+101 Symmetric Tree
+
+Medium
+98 Validate Binary Search Tree
+102 Binary Tree Level Order Traversal
+103 Binary Tree Zigzag Level Order Traversal
+
+Hard
+124 Binary Tree Maximum Path Sum (non-empty restriction ensure the recursion return should not consider 0);
+
+
+2.14
+Hard
+460 LFU Cache
+* minfreq lower bound: updated
+    (1) if a node move DQ1 to DQ2 which DQ1 is empty with min freq
+    (2) new node is put and evicted a old node, minfreq = 0;
+* hashmap<key, DQ> key is the frequency, DQ stores the node with given freq and sorted by recently used.
+* hashmap<key, node> find the node based on the key
+
+Medium
+31 Next Permutation
+707 Design Linked List
+146	LRU Cache
+662 Maximum Width of Binary Tree
+18 4Sum
+8 String to Integer (atoi)
