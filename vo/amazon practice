@@ -85,3 +85,25 @@ Medium
 662 Maximum Width of Binary Tree
 18 4Sum
 8 String to Integer (atoi)
+
+Feb 15
+Medium
+29 Divide Two Integers (2*divisor to match + recursion)
+665	Non-decreasing Array (* decrease the previous one or add the latter one)
+166 Fraction to Recurring Decimal (use hashmap to store <remainder, recurring start pos>)
+7 Reverse Integer (pay attention to check the overflow)
+523 Continuous Subarray Sum
+1201 Ugly Number III (binary search whole Integer range + gcd/lcm + 容斥原理)
+264 Ugly Number II (dp or pq+map)
+91 Decode Ways
+
+
+Feb 15
+Medium
+75 Sort Colors
+43 Multiply Strings
+1166 Design File System
+1233 Remove Sub-Folders from the Filesystem
+
+Hard
+642 Design Search Autocomplete System
